@@ -23,13 +23,17 @@ function writeInFile() {
 
     function gotFileWriter(writer) {
         document.getElementById("debug").innerHTML += "Got file writer...<br />";
-            writer.onwriteend = function(evt) {
+        writer.write("TEST2");
+        writer.onwriteend = function(evt) {
+                /*
                 for(var i=100; i>80; i--) {
                     writer.write(""+i+"\r\n");
                     writer.onwriteend = function(evt) {//console.log("contents of file now 'some different text'");
                     };
                 }
-            };
+                */
+            writer.write("TEST");
+        };
         document.getElementById("debug").innerHTML += "Written in file.<br />";
         //Written ; let's read it
         readFile();
