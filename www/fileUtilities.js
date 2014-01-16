@@ -12,7 +12,7 @@ function writeInFile() {
     
 
     function gotFS(fileSystem) {
-        document.getElementById("debug").innerHTML += "GotFS...<br />";
+        document.getElementById("debug").innerHTML += "GotFS...<br />FS name :<br  />"+fileSystem;
         fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
